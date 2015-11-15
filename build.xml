@@ -4,7 +4,7 @@
 	<property name="build.dir" value="${basedir}\build" />
 	<property name="eclipse.lib" value="D:\eclipse\plugins" />
 	<property name="main.class" value="com.adrianmacuc.coursera.stanford.algorithms.main.Main" />
-	
+
 	<path id="project-classpath">
 		<fileset dir="${src.dir}">
 			<include name="*.jar" />
@@ -17,7 +17,7 @@
 		</fileset>
 		<pathelement location="${build.dir}" />
 	</path>
-	
+
 	<record name="${basedir}\build.log" action="start" append="false" />
 
 	<target name="clean" description="clean">
@@ -31,6 +31,9 @@
 				<include name="*.txt" />
 			</fileset>
 		</copy>
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}" includes="testdata\**" />
+		</copy>
 	</target>
 
 	<target name="compile" depends="prepare" description="compile main source tree java files">
@@ -41,7 +44,7 @@
 	</target>
 
 	<target name="unit-tests" depends="compile">
-		<junit haltonfailure="yes">
+		<junit haltonfailure="yes"  fork="true" dir="${build.dir}" >
 			<classpath refid="project-classpath" />
 			<batchtest>
 				<fileset dir="${build.dir}">
@@ -56,7 +59,7 @@
 		<java fork="true" dir="${build.dir}" classname="${main.class}">
 			<classpath refid="project-classpath" />
 		</java>
-	</target>	
-</project>	
-		
+	</target>
+</project>
+
 

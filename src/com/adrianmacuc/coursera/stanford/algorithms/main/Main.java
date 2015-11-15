@@ -2,11 +2,13 @@ package com.adrianmacuc.coursera.stanford.algorithms.main;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("RESULTS");
-		
+
 		System.out.println("--------------------------");
 		System.out.println("Programming Question-1");
 		try {
@@ -17,9 +19,9 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("--------------------------");
-		System.out.println("Programming Question-2");				
+		System.out.println("Programming Question-2");
 		try {
 			int[] input = null;
 			input = Utils.loadData(new File("QuickSort.txt"));
@@ -42,11 +44,16 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
+		System.out.println("--------------------------");
+		System.out.println("Programming Question-3");
+		try {
+			HashMap<Integer, ArrayList<Integer>> graph = Utils.loadGraph(new File("kargerMinCut.txt"));
+			System.out.println("Minimum number of cuts for the graph: " + MinimumCut.getMinimumCut(graph, 30));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
-	
-	
-	
+
 }
