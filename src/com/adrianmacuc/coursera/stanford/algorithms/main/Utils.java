@@ -1,4 +1,4 @@
-package com.adrianmacuc.coursera.stanford.algorithms;
+package com.adrianmacuc.coursera.stanford.algorithms.main;
 
 import java.io.BufferedReader;
 import java.io.File;

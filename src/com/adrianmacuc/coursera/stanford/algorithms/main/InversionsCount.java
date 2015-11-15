@@ -1,25 +1,20 @@
-package com.adrianmacuc.coursera.stanford.algorithms;
+package com.adrianmacuc.coursera.stanford.algorithms.main;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 
 public class InversionsCount {
 
-	private static long inversions;
+	private static long inversions;	
 
-	public static void main(String[] args) {
-		try {
-			int[] input = Utils.loadData(new File("IntegerArray.txt"));
-			mergeSort(input);
-			System.out.printf("%d", inversions);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public static long getInversionsCount() {
+		return inversions;
 	}
 
-	public static int[] merge(int[] a, int[] b) {
+	public static void resetInversions() {
+		InversionsCount.inversions = 0;
+	}
+
+	private static int[] merge(int[] a, int[] b) {
 		int i = 0, j = 0;
 
 		int[] c = new int[a.length + b.length];

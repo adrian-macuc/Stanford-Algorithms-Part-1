@@ -1,0 +1,32 @@
+
+clean:
+   [delete] Deleting directory D:\git_projects\Algorithms - Design and Analysis, Part 1\build
+
+prepare:
+    [mkdir] Created dir: D:\git_projects\Algorithms - Design and Analysis, Part 1\build
+     [copy] Copying 2 files to D:\git_projects\Algorithms - Design and Analysis, Part 1\build
+
+compile:
+    [javac] Compiling 6 source files to D:\git_projects\Algorithms - Design and Analysis, Part 1\build
+
+unit-tests:
+    [junit] Testsuite: com.adrianmacuc.coursera.stanford.algorithms.test.InversionsCountTest
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 sec
+    [junit] 
+    [junit] Testsuite: com.adrianmacuc.coursera.stanford.algorithms.test.QuickSortTest
+    [junit] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+    [junit] 
+
+run:
+     [java] RESULTS
+     [java] --------------------------
+     [java] Programming Question-1
+     [java] Number of inversions while merge-sorting: 2407905288 
+     [java] --------------------------
+     [java] Programming Question-2
+     [java] Number of comparisons when using the number on first position as pivot: 162085 
+     [java] Number of comparisons when using the number on last position as pivot: 164123
+     [java] Number of comparisons when using the number on median between first, last and middle position as pivot: 138382
+BUILD SUCCESSFUL
+
+BUILD SUCCESSFUL

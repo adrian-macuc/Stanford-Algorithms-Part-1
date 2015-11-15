@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<project name="StanfordAlgorithms" default="clean" basedir=".">
+	<property name="src.dir" value="${basedir}\src" />
+	<property name="build.dir" value="${basedir}\build" />
+	<property name="eclipse.lib" value="D:\eclipse\plugins" />
+	<property name="main.class" value="com.adrianmacuc.coursera.stanford.algorithms.main.Main" />
+	
+	<path id="project-classpath">
+		<fileset dir="${src.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${eclipse.lib}">
+			<include name="org.hamcrest.core_1.3.0.v201303031735.jar" />
+		</fileset>
+		<fileset dir="${eclipse.lib}\org.junit_4.12.0.v201504281640">
+			<include name="junit.jar" />
+		</fileset>
+		<pathelement location="${build.dir}" />
+	</path>
+	
+	<record name="${basedir}\build.log" action="start" append="false" />
+
+	<target name="clean" description="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile" depends="prepare" description="compile main source tree java files">
+		<javac destdir="${build.dir}" debug="true" deprecation="false" optimize="false" failonerror="true" includeantruntime="false">
+			<src path="${src.dir}" />
+			<classpath refid="project-classpath" />
+		</javac>
+	</target>
+
+	<target name="unit-tests" depends="compile">
+		<junit haltonfailure="yes">
+			<classpath refid="project-classpath" />
+			<batchtest>
+				<fileset dir="${build.dir}">
+					<include name="**/*Test*" />
+				</fileset>
+			</batchtest>
+			<formatter type="brief" usefile="false" />
+		</junit>
+	</target>
+
+	<target name="run" depends="unit-tests">
+		<java fork="true" dir="${build.dir}" classname="${main.class}">
+			<classpath refid="project-classpath" />
+		</java>
+	</target>	
+</project>	
+		
+
