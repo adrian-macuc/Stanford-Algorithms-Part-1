@@ -3,7 +3,7 @@ Algorithms - Design and Analysis, Part 1
 
 Solutions to [Stanford Algorithms Course](https://www.coursera.org/course/algo) @ Coursera.org
 
- ###Programming Question 1 (Counting Inversions in Mergesort Algorithm)
+###Programming Question 1 (Counting Inversions in Mergesort Algorithm)
 
 - [x] Task 1
 - This file IntegerArray.txt contains all of the 100,000 integers between 1 and 100,000 (inclusive) in some order, with no integer repeated.
@@ -15,7 +15,7 @@ So if your answer is 1198233847, then just type 1198233847 in the space provided
 
  [TIP: before submitting, first test the correctness of your program on some small test files or your own devising. Then post your best test cases to the discussion forums to help your fellow students!]
 
- ###Programming Question 2 (Counting Comparisons in QuickSort Algorithm)
+###Programming Question 2 (Counting Comparisons in QuickSort Algorithm)
  
 - [x] Task 1
 - The file QuickSort.txt contains all of the integers between 1 and 10,000 (inclusive, with no repeats) in unsorted order. The integer in the ith row of the file gives you the ith entry of an input array.
@@ -38,7 +38,7 @@ So if your answer is 1198233847, then just type 1198233847 in the space provided
 
  SUBTLE POINT: A careful analysis would keep track of the comparisons made in identifying the median of the three candidate elements. You should NOT do this. That is, as in the previous two problems, you should simply add m-1 to your running total of comparisons every time you recurse on a subarray with length m.
  
- ###Programming Question 3 (Karger's Minimum Cut Algorithm)
+###Programming Question 3 (Karger's Minimum Cut Algorithm)
 
 - [x] Task 1
 - The file kargetMinCut.txt contains the adjacency list representation of a simple undirected graph. There are 200 vertices labeled 1 to 200. The first column in the file represents the vertex label, and the particular row (other entries except the first column) tells all the vertices that the vertex is adjacent to. So for example, the 6th row looks like : "6	155	56	52	120	......". This just means that the vertex with label 6 is adjacent to (i.e., shares an edge with) the vertices with labels 155,56,52,120,......,etc
